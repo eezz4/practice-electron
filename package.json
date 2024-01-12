@@ -17,7 +17,7 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "dependencies": {
-    "ref-napi": "https://github.com/eezz4/ref-napi"
+    "ffi-napi": "https://github.com/eezz4/node-ffi-napi#FIX/BUILD-WINDOWS"
   },
   "devDependencies": {
     "electron": "^28.1.1"
