@@ -1,8 +1,11 @@
 // Modules to control application life and create native browser window
 const { app, BrowserWindow } = require("electron");
 const path = require("node:path");
-const refNapi = require("ref-napi");
-console.log("refNapi::: ", refNapi);
+
+const user32 = koffi.load('user32.dll');
+const FindWindowA = user32.func('__stdcall', 'FindWindowA', 'ulong', ['string', 'string']);
+console.log('FindWindowA::: ', FindWindowA(null, null));
+
 
 function createWindow() {
   // Create the browser window.
