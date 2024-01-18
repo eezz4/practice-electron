@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <link href="./styles.css" rel="stylesheet" />
+    <title>target_title</title>
+  </head>
+  <body>
+    <div id="root">
+      <div style="display: flex; flex-direction: column">
+        <h1>Hello World!</h1>
+        <div>We are using Node.js <span id="node-version"></span>,</div>
+        <div>Chromium <span id="chrome-version"></span></div>
+        <div>Electron <span id="electron-version"></span>.</div>
+      </div>
+
+      <!-- <button id="printBtn" style="width: 120px; height: 40px">printBtn</button>
+      <table>
+        <thead>
+          <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <tr>
+            <td>Data 1-1</td>
+            <td>Data 1-2</td>
+          </tr>
+        </tbody>
+      </table> -->
+    </div>
+
+    <!-- You can also require other files to run in this process -->
+    <script type="module" src="renderer.js"></script>
+  </body>
+</html>
