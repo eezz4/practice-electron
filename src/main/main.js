@@ -1,6 +1,5 @@
 const { app, BrowserWindow, ipcMain } = require("electron");
 const path = require("node:path");
-const testWin32 = require("./win32/win32");
 const registerPrint = require("./print/print");
 
 async function createWindow() {
@@ -22,7 +21,6 @@ async function createWindow() {
 app.whenReady().then(async () => {
   const mainWindow = await createWindow();
   registerPrint(mainWindow);
-  testWin32();
   app.on("activate", function () {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
   });

@@ -345,11 +345,6 @@ keyv@^4.0.0:
   dependencies:
     json-buffer "3.0.1"
 
-koffi@^2.7.1:
-  version "2.7.2"
-  resolved "https://registry.yarnpkg.com/koffi/-/koffi-2.7.2.tgz#8098e675e62f126d34832c6316a43b9a510646d8"
-  integrity sha512-AWcsEKETQuELxK0Wq/aXDkDiNFFY41TxZQSrKm2Nd6HO/KTHeohPOOIlh2OfQnBXJbRjx5etpWt8cbqMUZo2sg==
-
 lowercase-keys@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/lowercase-keys/-/lowercase-keys-2.0.0.tgz#2603e78b7b4b0006cbca2fbcc8a3202558ac9479"

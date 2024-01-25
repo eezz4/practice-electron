@@ -4,7 +4,6 @@ export function printTest() {
   const root = document.getElementById("root");
   if (root === null) throw new Error("check #root");
 
-  // HTML 문자열을 파싱하여 DOM 요소로 변환
   const parser = new DOMParser();
   const doc = parser.parseFromString(htmlString, "text/html");
   root.appendChild(doc.body);
@@ -28,15 +27,29 @@ export function printTest() {
 
   tableBody.append(...rows);
 
-  document.getElementById("printBtn").addEventListener("click", () => {
+  document.getElementById("printBtnLarge").addEventListener("click", () => {
+    // Test reproduction path: LARGE_INCH_PRINT button handler
     ipcRenderer.invoke("printChannel", {
       printBackground: true,
       margins: {
-        // margin unit is inches, not pixels.
-        // Using a value that is too high will result in a `content area is empty` exception.
-        // After that, only a restart will restore Electron's print functionality.
-        bottom: 1.0,
-        marginType: "default",
+        top: 10.0, // large inch
+        bottom: 10.0, // large inch
+      },
+      displayHeaderFooter: true,
+      headerTemplate: "<div></div>",
+      footerTemplate: makeTemplate(
+        "footer-leftleftleftleftleftleftleftleftleftleftleftleftleftleft"
+      ),
+    });
+  });
+
+  document.getElementById("printBtnNormal").addEventListener("click", () => {
+    // Test reproduction path: NORMAL_PRINT button handler
+    ipcRenderer.invoke("printChannel", {
+      printBackground: true,
+      margins: {
+        top: 1.0, // normal inch
+        bottom: 1.0, // normal inch
       },
       displayHeaderFooter: true,
       headerTemplate: "<div></div>",
@@ -66,7 +79,8 @@ function makeTemplate(str) {
 }
 
 const htmlString = `
-  <button id="printBtn" style="width: 120px; height: 40px">printBtn</button>
+  <button id="printBtnLarge" style="width: 200px; height: 40px">LARGE_INCH_PRINT</button>
+  <button id="printBtnNormal" style="width: 200px; height: 40px">NORMAL_PRINT</button>
   <table>
     <thead>
       <tr>
