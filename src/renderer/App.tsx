@@ -1,7 +1,7 @@
 import "./App.css";
+import { TypiaExp } from "./TypiaExp/TypiaExp";
 import logo from "./logo.svg";
-
-const { ipcRenderer } = window.require("electron");
+import { invoke } from "./modules/electron.util";
 
 function App() {
   return (
@@ -9,11 +9,12 @@ function App() {
       <header className="App-header">
         <button
           onClick={() => {
-            ipcRenderer.invoke("ipcChecker").then(console.log);
+            invoke("ipcChecker").then(console.log);
           }}
         >
           ipcChecker
         </button>
+        <TypiaExp />
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.

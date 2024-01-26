@@ -10,7 +10,7 @@ files:
   - build_electron/**/*
 
 extraMetadata:
-  main: build_electron/electron.js
+  main: build_electron/main/electron.js
 
 win:
   target: dir

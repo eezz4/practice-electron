@@ -3,9 +3,15 @@
     "module": "commonjs",
     "outDir": "./build_electron",
     "strict": true,
+    "strictNullChecks": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "plugins": [
+      {
+        "transform": "typia/lib/transform"
+      }
+    ]
   },
   "include": ["src"],
   "exclude": ["src/renderer", "node_modules"]
