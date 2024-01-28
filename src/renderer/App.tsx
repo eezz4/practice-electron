@@ -3,6 +3,8 @@ import logo from "./logo.svg";
 
 const { ipcRenderer } = window.require("electron");
 
+// typiaExp();
+
 function App() {
   return (
     <div className="App">
