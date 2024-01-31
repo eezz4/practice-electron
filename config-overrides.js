@@ -36,9 +36,7 @@ function modifyCRAConfigForTypia(reactConfig) {
   reactConfig.module.rules[1].oneOf[3] = {
     test: /\.(js|mjs|jsx|ts|tsx)$/,
     exclude: /node_modules/,
-    use: {
-      loader: "ts-loader",
-    },
+    loader: "ts-loader",
   };
 
   // 2. remove ForkTsCheckerWebpackPlugin
