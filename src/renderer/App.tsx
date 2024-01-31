@@ -1,4 +1,5 @@
 import "./App.css";
+import { TypiaExp } from "./TypiaExp/TypiaExp";
 import logo from "./logo.svg";
 
 const { ipcRenderer } = window.require("electron");
@@ -14,6 +15,7 @@ function App() {
         >
           ipcChecker
         </button>
+        <TypiaExp />
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
