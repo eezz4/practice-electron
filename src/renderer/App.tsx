@@ -1,9 +1,10 @@
 import "./App.css";
 import logo from "./logo.svg";
+import { typiaExp } from "./typiaExp/typiaExp";
 
 const { ipcRenderer } = window.require("electron");
 
-// typiaExp();
+typiaExp();
 
 function App() {
   return (
