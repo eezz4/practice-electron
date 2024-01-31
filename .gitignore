@@ -1,2 +1,5 @@
 node_modules
 test.pdf
+dist
+build
+build_electron

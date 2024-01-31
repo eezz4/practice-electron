@@ -28,12 +28,11 @@ export function printTest() {
   tableBody.append(...rows);
 
   document.getElementById("printBtnLarge").addEventListener("click", () => {
-    // Test reproduction path: LARGE_INCH_PRINT button handler
+    // Test reproduction path: NEGATIVE_INCH_PRINT button handler
     ipcRenderer.invoke("printChannel", {
       printBackground: true,
       margins: {
-        top: 10.0, // large inch
-        bottom: 10.0, // large inch
+        top: -1.0, // NEGATIVE_INCH_PRINT
       },
       displayHeaderFooter: true,
       headerTemplate: "<div></div>",
@@ -48,8 +47,7 @@ export function printTest() {
     ipcRenderer.invoke("printChannel", {
       printBackground: true,
       margins: {
-        top: 1.0, // normal inch
-        bottom: 1.0, // normal inch
+        top: 1.0, // NORMAL_PRINT
       },
       displayHeaderFooter: true,
       headerTemplate: "<div></div>",
@@ -79,7 +77,7 @@ function makeTemplate(str) {
 }
 
 const htmlString = `
-  <button id="printBtnLarge" style="width: 200px; height: 40px">LARGE_INCH_PRINT</button>
+  <button id="printBtnLarge" style="width: 200px; height: 40px">NEGATIVE_INCH_PRINT</button>
   <button id="printBtnNormal" style="width: 200px; height: 40px">NORMAL_PRINT</button>
   <table>
     <thead>
