@@ -9,8 +9,6 @@ module.exports = {
     return reactPaths;
   },
   webpack: (reactConfig, env) => {
-    const isDev = env === "development";
-    if (!isDev) reactConfig.output.publicPath = "./";
     return reactConfig;
   },
 };
