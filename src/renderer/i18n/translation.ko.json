@@ -1,0 +1,4 @@
+{
+  "Welcome to React": "React 환영합니다",
+  "Hello": "안녕, {{name}}!"
+}
