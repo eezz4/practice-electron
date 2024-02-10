@@ -1,0 +1,17 @@
+appId: com.eezz4.TestElectron
+copyright: none
+productName: TestElectron
+
+asar: true
+
+files:
+  - package.json
+  - build_vite/**/*
+  - build_electron/**/*
+
+extraMetadata:
+  main: build_electron/main/electron.js
+
+win:
+  target: dir
+  icon: build_vite/vite.ico
