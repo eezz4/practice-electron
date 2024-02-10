@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { sum } from "../global/modules/sum/sum";
 import "./App.css";
 import reactLogo from "./assets/react.svg";
@@ -6,6 +7,8 @@ import viteLogo from "/vite.svg";
 
 function App() {
   const [count, setCount] = useState(sum(50, 50));
+  const { t, i18n } = useTranslation();
+  const name = useRef("Foo");
 
   return (
     <>
@@ -18,9 +21,19 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
+      <h4>{t("Welcome to React")}</h4>
+      <h4>{t("Hello", { name: name.current })}</h4>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
+        </button>
+        <button
+          onClick={() => {
+            name.current = name.current === "Foo" ? "푸" : "Foo";
+            i18n.changeLanguage(i18n.language === "kr" ? "en" : "kr");
+          }}
+        >
+          i18n is {i18n.language}
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
