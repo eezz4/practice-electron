@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { sum } from "../global/modules/sum/sum";
 import "./App.css";
 import reactLogo from "./assets/react.svg";
+import { getIpcRenderer } from "./modules/electrons";
 import viteLogo from "/vite.svg";
 
 function App() {
@@ -34,6 +35,13 @@ function App() {
           }}
         >
           i18n is {i18n.language}
+        </button>
+        <button
+          onClick={() => {
+            getIpcRenderer().invoke('ipcChecker').then(console.log)              
+          }}
+        >
+          ipcChecker
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR

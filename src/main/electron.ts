@@ -1,5 +1,4 @@
 import { app, BrowserWindow, ipcMain } from "electron";
-import path from "path";
 import { sum } from "../global/modules/sum/sum";
 
 console.log("sum", sum(50, 50));
@@ -17,7 +16,8 @@ function createWindow() {
   });
 
   if (isDev) mainWindow.loadURL("http://localhost:3000");
-  else mainWindow.loadFile(path.join("build_vite", "index.html"));
+  // else mainWindow.loadFile(path.join("build_vite", "index.html"));
+  else mainWindow.loadURL("http://localhost:3000");
 }
 
 app.whenReady().then(() => {
@@ -33,5 +33,5 @@ app.on("window-all-closed", function () {
 });
 
 ipcMain.handle("ipcChecker", () => {
-  return 1;
+  return Date.now();
 });
